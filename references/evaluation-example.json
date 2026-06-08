@@ -1,0 +1,290 @@
+{
+  "metadata": {
+    "title": "Hermes 技能生态系统评估示例",
+    "version": "1.0.0",
+    "date": "2026-06-09",
+    "evaluator": "Skill Ecosystem Librarian",
+    "total_skills": 122
+  },
+  "summary": {
+    "total_skills": 122,
+    "layer_distribution": {
+      "hot": {
+        "count": 15,
+        "percentage": 12.3,
+        "description": "高频使用的核心技能"
+      },
+      "normal": {
+        "count": 45,
+        "percentage": 36.9,
+        "description": "稳定使用的常规技能"
+      },
+      "seed": {
+        "count": 35,
+        "percentage": 28.7,
+        "description": "有潜在价值的种子技能"
+      },
+      "isolation": {
+        "count": 27,
+        "percentage": 22.1,
+        "description": "待评估或有问题的技能"
+      }
+    },
+    "average_score": 62.5,
+    "score_distribution": {
+      "80-100": 20,
+      "60-79": 45,
+      "40-59": 35,
+      "20-39": 15,
+      "0-19": 7
+    }
+  },
+  "skills": [
+    {
+      "name": "hermes-agent",
+      "category": "autonomous-ai-agents",
+      "total_score": 95.2,
+      "dimension_scores": {
+        "activity": 98,
+        "relationship": 95,
+        "completeness": 100,
+        "robustness": 92,
+        "adaptability": 88,
+        "uniqueness": 95
+      },
+      "layer": "hot",
+      "recommended_action": "keep",
+      "anti_entropy_protected": false,
+      "defense": null,
+      "metadata": {
+        "last_used": "2026-06-09",
+        "use_count": 156,
+        "success_rate": 0.98,
+        "in_degree": 12,
+        "out_degree": 3
+      }
+    },
+    {
+      "name": "hermes-skill-curation",
+      "category": "autonomous-ai-agents",
+      "total_score": 88.7,
+      "dimension_scores": {
+        "activity": 85,
+        "relationship": 82,
+        "completeness": 95,
+        "robustness": 90,
+        "adaptability": 85,
+        "uniqueness": 92
+      },
+      "layer": "hot",
+      "recommended_action": "keep",
+      "anti_entropy_protected": false,
+      "defense": null,
+      "metadata": {
+        "last_used": "2026-06-08",
+        "use_count": 45,
+        "success_rate": 0.95,
+        "in_degree": 8,
+        "out_degree": 2
+      }
+    },
+    {
+      "name": "pokemon-player",
+      "category": "gaming",
+      "total_score": 35.2,
+      "dimension_scores": {
+        "activity": 15,
+        "relationship": 20,
+        "completeness": 75,
+        "robustness": 40,
+        "adaptability": 30,
+        "uniqueness": 85
+      },
+      "layer": "seed",
+      "recommended_action": "keep",
+      "anti_entropy_protected": true,
+      "defense": {
+        "scenario_usage": ["游戏娱乐场景", "教育学习场景"],
+        "future_potential": ["游戏化学习趋势", "AI娱乐应用"],
+        "unique_value": "高度独特，难以替代",
+        "user_dependency": "被3个用户依赖，删除有轻微影响",
+        "irreversible_loss": ["独特功能永久丢失"],
+        "summary": "建议保留：有明确使用场景，有未来潜力，具有一定独特性"
+      },
+      "metadata": {
+        "last_used": "2026-05-15",
+        "use_count": 5,
+        "success_rate": 0.6,
+        "in_degree": 1,
+        "out_degree": 2,
+        "potential_value": 0.8,
+        "uniqueness_score": 0.85
+      }
+    },
+    {
+      "name": "touchdesigner-mcp",
+      "category": "creative",
+      "total_score": 28.5,
+      "dimension_scores": {
+        "activity": 10,
+        "relationship": 15,
+        "completeness": 80,
+        "robustness": 35,
+        "adaptability": 20,
+        "uniqueness": 90
+      },
+      "layer": "seed",
+      "recommended_action": "keep",
+      "anti_entropy_protected": true,
+      "defense": {
+        "scenario_usage": ["实时视觉创作", "交互艺术装置"],
+        "future_potential": ["创意编程趋势", "沉浸式体验"],
+        "unique_value": "高度独特，难以替代",
+        "user_dependency": "无用户依赖",
+        "irreversible_loss": ["独特功能永久丢失", "集成关系断裂"],
+        "summary": "建议保留：有明确使用场景，有未来潜力，具有高度独特性"
+      },
+      "metadata": {
+        "last_used": "2026-04-20",
+        "use_count": 2,
+        "success_rate": 0.5,
+        "in_degree": 0,
+        "out_degree": 1,
+        "potential_value": 0.75,
+        "uniqueness_score": 0.9
+      }
+    },
+    {
+      "name": "shadowsocks-node-deployment",
+      "category": "devops",
+      "total_score": 72.3,
+      "dimension_scores": {
+        "activity": 65,
+        "relationship": 70,
+        "completeness": 85,
+        "robustness": 75,
+        "adaptability": 60,
+        "uniqueness": 65
+      },
+      "layer": "normal",
+      "recommended_action": "keep",
+      "anti_entropy_protected": false,
+      "defense": null,
+      "metadata": {
+        "last_used": "2026-06-01",
+        "use_count": 12,
+        "success_rate": 0.85,
+        "in_degree": 5,
+        "out_degree": 3
+      }
+    },
+    {
+      "name": "vps-proxy-node",
+      "category": "devops",
+      "total_score": 68.9,
+      "dimension_scores": {
+        "activity": 60,
+        "relationship": 65,
+        "completeness": 80,
+        "robustness": 70,
+        "adaptability": 55,
+        "uniqueness": 70
+      },
+      "layer": "normal",
+      "recommended_action": "keep",
+      "anti_entropy_protected": false,
+      "defense": null,
+      "metadata": {
+        "last_used": "2026-05-28",
+        "use_count": 8,
+        "success_rate": 0.8,
+        "in_degree": 4,
+        "out_degree": 2
+      }
+    },
+    {
+      "name": "vpn-node-setup",
+      "category": "devops",
+      "total_score": 65.4,
+      "dimension_scores": {
+        "activity": 55,
+        "relationship": 60,
+        "completeness": 75,
+        "robustness": 65,
+        "adaptability": 50,
+        "uniqueness": 75
+      },
+      "layer": "normal",
+      "recommended_action": "keep",
+      "anti_entropy_protected": false,
+      "defense": null,
+      "metadata": {
+        "last_used": "2026-05-25",
+        "use_count": 6,
+        "success_rate": 0.75,
+        "in_degree": 3,
+        "out_degree": 2
+      }
+    }
+  ],
+  "duplicate_groups": [
+    {
+      "group": "代理部署相关",
+      "skills": ["shadowsocks-node-deployment", "vps-proxy-node", "vpn-node-setup"],
+      "recommendation": "功能高度重叠，建议合并为1-2个技能",
+      "action": "review"
+    },
+    {
+      "group": "服务器健康检查",
+      "skills": ["linux-server-health-check", "server-performance-evaluation"],
+      "recommendation": "描述相似，可考虑合并",
+      "action": "review"
+    },
+    {
+      "group": "语音相关",
+      "skills": ["voice-integration", "web-voice", "web-app-voice-features"],
+      "recommendation": "三个语音相关技能，可合并为1个",
+      "action": "review"
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "merge",
+      "skills": ["shadowsocks-node-deployment", "vps-proxy-node", "vpn-node-setup"],
+      "reason": "功能高度重叠，合并后可减少系统提示长度"
+    },
+    {
+      "type": "merge",
+      "skills": ["voice-integration", "web-voice", "web-app-voice-features"],
+      "reason": "语音相关技能重叠，合并为1个综合技能"
+    },
+    {
+      "type": "protect",
+      "skills": ["pokemon-player", "touchdesigner-mcp"],
+      "reason": "低分但高独特性，反熵保护"
+    },
+    {
+      "type": "monitor",
+      "skills": ["shadowsocks-node-deployment", "vps-proxy-node", "vpn-node-setup"],
+      "reason": "重复技能，需人工审核合并方案"
+    }
+  ],
+  "anti_entropy_protection": {
+    "protected_count": 3,
+    "protection_rate": 0.1,
+    "protected_skills": [
+      {
+        "name": "pokemon-player",
+        "reason": "高独特性，游戏/教育领域潜在价值"
+      },
+      {
+        "name": "touchdesigner-mcp",
+        "reason": "高独特性，创意编程领域潜在价值"
+      },
+      {
+        "name": "manim-video",
+        "reason": "高独特性，数学动画领域潜在价值"
+      }
+    ]
+  }
+}

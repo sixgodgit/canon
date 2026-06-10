@@ -79,3 +79,17 @@ MIT License
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request。
+
+---
+
+## 📄 License
+
+This project is licensed under **CC BY-NC 4.0** — [Creative Commons Attribution-NonCommercial 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
+
+- ✅ **Free to use** — personal, educational, and open-source projects
+- ✅ **Free to modify and distribute**
+- ✅ **Attribution required** — Credit: **sixgod** ([@sixgodgit](https://github.com/sixgodgit))
+- ❌ **No commercial use** — Selling or profit-making from this code is prohibited
+
+**Author:** sixgod | **GitHub:** [github.com/sixgodgit](https://github.com/sixgodgit)
+

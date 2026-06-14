@@ -185,66 +185,48 @@ python3 scripts/librarian_process.py \
 - **热气层要有容量上限**——没有上限的话就退化回单层系统
 - **借阅记录要透明**——谁、什么时候、为什么从隔离层调用了技能
 - **图书管理员不评判内容**——只管理目录和位置
+- **并行 `mv` + `patch` 竞态**——当同一个 turn 里先重命名目录再 patch 内部文件时，patch 调用可能命中旧路径。要么分两个 turn 执行，要么确保 patch 在 rename 之后且使用新路径
 
-## ChromaDB 记忆集成（v2.1 新增）
+## 记忆系统集成（v3.0）
 
-### 概述
-技能评估结果和使用模式存储到 ChromaDB，支持语义搜索。
-例如搜索"网络相关技能"可以找到所有与网络、代理、VPN 相关的技能。
+### 集成架构
 
-### 集成方式
+| 记忆系统 | 写入内容 | 写入时机 |
+|----------|----------|----------|
+| **Hermes 原生 `memory` 工具** | 生态健康摘要（各层数量 + 轮转结果 + 异常） | 每次评估结束 |
+| **NexSandglass 沙漏** | 重大生态事件（技能升层/降层/复活）→ `thread_add` | 有变化时 |
 
-```python
-# 评估结果存入 ChromaDB
-from hermes_memory import get_memory
+### 写入规则
 
-mem = get_memory()
+每次评估完成后，写入以下记忆：
 
-# 存储技能评估
-mem.add(
-    content=f"技能 {skill_name} 评估完成：分数 {score}，分类到 {layer} 层。{reason}",
-    metadata={
-        "type": "skill_evaluation",
-        "skill_name": skill_name,
-        "score": score,
-        "layer": layer,
-        "category": category
-    }
-)
+```
+# 生态仪表盘 → 原生 memory
+memory(action='add', target='memory', content='技能生态周报 [日期]：hot X个, normal Y个, seed_bank Z个, isolation W个。本周轮转：[技能名] 从种子库复活观察。')
 
-# 语义搜索相关技能
-results = mem.search("网络代理相关技能", n_results=5)
-# 返回所有与网络、代理、VPN 相关的技能评估记录
+# 重大变化 → 原生 memory
+memory(action='add', target='memory', content='技能生态变更 [日期]: [技能名] 从 [原层] 移至 [新层]，原因: [shelf_note]')
 ```
 
-### 使用场景
-1. **查找相似技能**：搜索"文件处理"找到所有文件相关技能
-2. **分析使用模式**：搜索"最近调用"了解哪些技能活跃
-3. **跨类别发现**：搜索"数据处理"可能发现 csv、json、excel 等多个类别下的相关技能
+### 查询生态历史
 
-### 脚本扩展
-
-```bash
-# 评估并存储到 ChromaDB
-python3 scripts/librarian_process.py \
-  --input assessment.json \
-  --output classification.json \
-  --mode librarian \
-  --store-memory  # 新增：同时存入 ChromaDB
-
-# 语义搜索技能
-python3 -c "
-from hermes_memory import get_memory
-mem = get_memory()
-results = mem.search('网络代理', n_results=5)
-for r in results:
-    print(f'{r[\"metadata\"][\"skill_name\"]}: {r[\"content\"][:80]}')
-"
 ```
+# 搜索技能生态快照
+mcp_pre_gateway_dispatch_sandglass_semantic(query="技能生态 周报")
+
+# 搜索某个技能的层级变化
+mcp_pre_gateway_dispatch_sandglass_search(query="技能名 升层")
+```
+
+### ChromaDB 迁移说明
+
+v2.1 的 ChromaDB 依赖已移除。技能评估历史改为通过原生 memory 和沙漏织线存储，
+两个系统已内置检索能力。
 
 ## 版本历史
 
-- **v2.1** (当前): 集成 ChromaDB 语义记忆，支持技能评估历史的向量搜索
+- **v3.0** (当前): 记忆系统集成 — 移除 ChromaDB 强依赖，改用原生 memory + 沙漏织线。每周 cron job 自动化。
+- **v2.1**: 集成 ChromaDB 语义记忆，支持技能评估历史的向量搜索
 - **v2.0**: 从 Gardener 升级为 Librarian。四层架构。不再有"删除"，只有分类和轮转。
 - **v1.0** (已归档): Gardener 版本。以"园丁"角色做判断。见 references/v1-legacy.md。
 

@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "title": "Hermes 技能生态系统评估示例 v4.0",
+    "version": "4.0.0",
+    "date": "2026-06-09",
+    "evaluator": "Skill Ecosystem Librarian v4.0",
+    "total_skills": 122,
+    "ecosystem_context": "stability",
+    "scoring_mode": "dynamic"
+  },
+  "summary": {
+    "total_skills": 122,
+    "layer_distribution": {
+      "hot": { "count": 18, "percentage": 14.8 },
+      "normal": { "count": 42, "percentage": 34.4 },
+      "seed": { "count": 30, "percentage": 24.6 },
+      "archive": { "count": 12, "percentage": 9.8 },
+      "isolation": { "count": 20, "percentage": 16.4 }
+    },
+    "tag_distribution": {
+      "hot": 18, "warm": 42, "cold": 20, "dormant": 12,
+      "unique": 25, "potential": 18, "core": 15,
+      "healthy": 55, "degraded": 35, "broken": 10,
+      "incubating": 8, "mature": 85, "legacy": 15
+    },
+    "archived_count": 12,
+    "revival_candidates": 5,
+    "open_proposals": 3,
+    "average_score": 64.2
+  },
+  "skills": [
+    {
+      "name": "hermes-agent",
+      "category": "autonomous-ai-agents",
+      "skill_type": "infrastructure",
+      "total_score": 95.2,
+      "dimensions": {
+        "activity": 98, "relationship": 95, "completeness": 100,
+        "robustness": 92, "adaptability": 88, "uniqueness": 95
+      },
+      "weights_used": {
+        "activity": 0.20, "relationship": 0.20, "completeness": 0.15,
+        "robustness": 0.30, "adaptability": 0.10, "uniqueness": 0.05
+      },
+      "tags": ["hot", "unique", "core", "healthy", "mature"],
+      "layer": "hot",
+      "defense": null,
+      "metadata": {
+        "last_used": "2026-06-09", "use_count": 156,
+        "success_rate": 0.98, "in_degree": 12, "out_degree": 3
+      }
+    },
+    {
+      "name": "pixel-art",
+      "category": "creative",
+      "skill_type": "creative",
+      "total_score": 68.5,
+      "dimensions": {
+        "activity": 25, "relationship": 15, "completeness": 80,
+        "robustness": 45, "adaptability": 30, "uniqueness": 92
+      },
+      "weights_used": {
+        "activity": 0.15, "relationship": 0.10, "completeness": 0.20,
+        "robustness": 0.15, "adaptability": 0.10, "uniqueness": 0.30
+      },
+      "tags": ["cold", "unique", "potential", "degraded", "mature"],
+      "layer": "seed",
+      "defense": null,
+      "metadata": {
+        "last_used": "2026-05-20", "use_count": 8,
+        "success_rate": 0.75, "in_degree": 2, "out_degree": 1,
+        "uniqueness_score": 0.92, "potential_value": 0.85
+      }
+    },
+    {
+      "name": "pokemon-player",
+      "category": "gaming",
+      "skill_type": "creative",
+      "total_score": 52.3,
+      "dimensions": {
+        "activity": 15, "relationship": 20, "completeness": 75,
+        "robustness": 40, "adaptability": 30, "uniqueness": 85
+      },
+      "weights_used": {
+        "activity": 0.15, "relationship": 0.10, "completeness": 0.20,
+        "robustness": 0.15, "adaptability": 0.10, "uniqueness": 0.30
+      },
+      "tags": ["dormant", "unique", "potential", "degraded", "mature"],
+      "layer": "seed",
+      "defense": {
+        "summary": "建议保留：高独特性(0.85)，游戏/教育领域潜在价值"
+      },
+      "metadata": {
+        "last_used": "2026-05-15", "use_count": 5,
+        "success_rate": 0.6, "in_degree": 1, "out_degree": 2,
+        "uniqueness_score": 0.85, "potential_value": 0.8
+      }
+    },
+    {
+      "name": "shadowsocks-node-deployment",
+      "category": "devops",
+      "skill_type": "infrastructure",
+      "total_score": 72.3,
+      "dimensions": {
+        "activity": 65, "relationship": 70, "completeness": 85,
+        "robustness": 75, "adaptability": 60, "uniqueness": 65
+      },
+      "weights_used": {
+        "activity": 0.20, "relationship": 0.20, "completeness": 0.15,
+        "robustness": 0.30, "adaptability": 0.10, "uniqueness": 0.05
+      },
+      "tags": ["warm", "healthy", "mature"],
+      "layer": "normal",
+      "defense": null,
+      "metadata": {
+        "last_used": "2026-06-01", "use_count": 12,
+        "success_rate": 0.85, "in_degree": 5, "out_degree": 3
+      }
+    }
+  ],
+  "revival_tests": [
+    {
+      "skill": "touchdesigner-mcp",
+      "scenarios": ["auto_test"],
+      "reason": "高独特性(0.90)但休眠50天",
+      "status": "scheduled"
+    }
+  ],
+  "governance_proposals": [
+    {
+      "id": 1, "type": "merge",
+      "skills": ["shadowsocks-node-deployment", "vps-proxy-node", "vpn-node-setup"],
+      "reason": "功能高度重叠，建议合并",
+      "status": "open"
+    }
+  ]
+}
